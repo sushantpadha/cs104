@@ -1,0 +1,35 @@
+<html>
+<head>
+   <title>Form Example</title>
+</head>
+<body>
+
+<form action="/submit_form" method="POST">
+   <!-- Textarea -->
+   <p>Enter your comments:</p>
+   <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Write your comments here..."></textarea>
+
+   <!-- Select with Multiple Options -->
+   <p>Select your favorite fruits:</p>
+   <select id="fruits" name="fruits" multiple>
+       <option value="apple">Apple</option>
+       <option value="banana">Banana</option>
+       <option value="cherry">Cherry</option>
+   </select>
+
+   <p>Select your favorite fruits:</p>
+   <select id="fruits" name="fruits">
+       <option value="apple">Apple</option>
+       <option value="banana">Banana</option>
+       <option value="cherry" selected>Cherry</option>
+   </select>
+
+   <!-- Buttons -->
+   <p>Choose an action:</p>
+   <button type="submit">Submit Form</button>
+   <button type="reset">Reset Form</button>
+   <button type="button" onclick="alert('This is a button with no form action')">Click Me</button>
+</form>
+
+</body>
+</html>

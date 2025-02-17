@@ -1,0 +1,34 @@
+<html>
+<head>
+   <title>Form with Radio, Checkbox, and File Upload</title>
+</head>
+<body>
+
+<form action="/submit_form" method="POST">
+
+   <!-- Radio Buttons -->
+   <p>Please select your gender:</p>
+   <input type="radio" id="male" name="gender" value="male"> Male <br>
+   <input type="radio" id="female" name="gender" value="female" checked="checked"> Female <br>
+   <input type="radio" id="other" name="gender" value="other"> Other <br>
+
+   <!-- Checkboxes -->
+   <p>Choose your hobbies:</p>
+   <input type="checkbox" id="hobby1" name="hobbies" value="reading"> Reading
+   <input type="checkbox" id="hobby2" name="hobbies" value="traveling"> Traveling
+   <input type="checkbox" id="hobby3" name="hobbies" value="gaming"> Gaming
+  
+   <!-- Hidden Input -->
+   <input type="hidden" name="token" value="abcde12345">
+
+   <!-- File Upload -->
+   <p>Please upload your profile picture:</p>
+   <input type="file" id="profilePicture" name="profilePicture" accept=".jpg,.jpeg,.png"><br><br>
+
+   <!-- Submit Button -->
+   <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

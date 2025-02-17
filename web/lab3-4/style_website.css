@@ -1,0 +1,431 @@
+/*import roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --alt-color: rgb(233, 252, 255);
+    --alt-font-color: rgb(71, 71, 80);
+    font-size: 18px;
+}
+
+h3 {
+    color: var(--alt-font-color);
+}
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    margin: 0;
+}
+
+header {
+    display: block;
+    background-color: #2e2e2e;
+    color: var(--alt-color);
+    font-size: 200%;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 20px;
+    width: 100%;
+    height: 65px;
+}
+
+.container {
+    display: flex;
+    /* top & bottom | right & left*/
+    /* top | left & right | bottom */
+    /* top | right | bottom | left */
+    padding: 10px 20%;
+}
+
+.content {
+    flex: 1;
+}
+
+.photo {
+    max-width: 512px;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.photo>img {
+    width: 70%;
+}
+
+.footer-bar {
+    display: block;
+    width: 100%;
+    background-color: #2e2e2e;
+    color: var(--alt-color);
+    text-align: center;
+    padding-top: 20px;
+    height: 45px;
+    position: absolute;
+    margin: 0;
+    z-index: 2;
+}
+
+.full-footer {
+    bottom: 0;
+}
+
+.partial-footer {
+    bottom: 197px;
+}
+
+.footer-img {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.footer-img img {
+    margin: 0;
+    padding: 0;
+    transform: scaleY(1.06);
+}
+
+footer {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: rgb(164, 212, 252);
+}
+
+nav {
+    background-color: #4d4d4d;
+    height: 25px;
+    color: var(--alt-color);
+    display: block;
+    padding: 4px;
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--alt-color);
+    padding: 0 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.favourite-xkcd {
+    display: inline-block;
+}
+
+a.favourite-xkcd:hover {
+    content: "#936";
+}
+
+main {
+    display: block;
+    text-align: left;
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 66, 121);
+}
+
+label {
+    display: inline;
+}
+
+input {
+    display: inline;
+    width: auto;
+    font-size: 0.8em;
+    margin: 5px;
+}
+
+textarea {
+    display: block;
+    font-size: 0.8em;
+    width: auto;
+    margin: 5px;
+}
+
+button {
+    width: auto;
+    border-radius: 8px;
+    background-color: rgb(202, 240, 255);
+    font-size: 1em;
+    margin: 3px 10px 3px 10px;
+}
+
+#nav-left {
+    margin-left: 5px;
+}
+
+#nav-right {
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.image-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(0, 66, 121);
+    font-family: Lucida, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.image-tooltip .tooltip-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -200px;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: aliceblue;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, visibility 0.3s;
+    width: max-content;
+    max-width: 550px;
+}
+
+#xkcd-936 {
+    left: 505px;
+}
+
+#xkcd-2347 {
+    left: 460px;
+}
+
+.image-tooltip:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.image-tooltip .tooltip-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+/* Animation for tooltip appearance */
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.image-tooltip:hover .tooltip-content {
+    animation: tooltipFadeIn 0.3s ease-out;
+}
+
+#xkcd-ref {
+    position: absolute;
+    bottom: 260px;
+}
+
+/* Ensures the page stays full-width */
+#page-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed; /* So it doesn't shift */
+    top: 0;
+    left: 0;
+    transition: transform 3s ease-in;
+    transform-origin: top left;
+}
+
+/* Tilt and fall animation */
+/* @keyframes tiltAndFall {
+    0% { transform: rotate(0deg) translateY(0); }
+    20% {transform: rotate(12deg); }
+    22% {transform: rotate(12deg); }
+    32% {transform: rotate(8deg);}
+    30% { transform: rotate(0deg) translateY(200px); }
+    100% { transform: rotate(20deg) translateY(200vh); }
+}
+*/
+/* @keyframes tiltPhase {
+    0% { transform: rotate(0deg) translateY(0); }
+    30% { transform: rotate(15deg) translateY(0); }
+    40% { transform: rotate(8deg) translateY(0); }
+    60% { transform: rotate(5deg) translateY(0); }
+    100% { transform: rotate(0deg) translateY(100px); }
+}
+
+@keyframes fallPhase {
+    0% { transform: rotate(8deg) translateY(100px); opacity: 0; }
+    10% { transform: rotate(0deg) translateY(100px); width: 100vw; }
+    100% { transform: rotate(0deg) translateY(300vh); }
+} */
+@keyframes pendulumSwing {
+    0% { transform: rotate(0deg) translateY(0); }
+    100% { transform: rotate(15deg) translateY(0); }
+}
+
+@keyframes pendulumFall {
+    0% { transform: rotate(15deg) translateY(0); }
+    100% {transform: rotate(6deg) translateY(0); }
+    /* 100% {transform: rotate(0deg) translateY(100px);} */
+}
+
+@keyframes breakFall {
+    0% { transform: rotate(0deg) translateY(200px);} /* Rotation resets */
+    100% { transform: rotate(0deg) translateY(300vh); } /* Accelerated fall */
+}
+
+@keyframes full {
+    /* Initial state */
+    0% {
+      transform: rotate(0deg);
+    }
+    
+    /* Swing to maximum rotation */
+    15% {
+      transform: rotate(15deg);
+    }
+    
+    /* Pull back before breaking */
+    30% {
+      transform: rotate(6deg);
+    }
+    
+    /* Start falling while rotating back */
+    40% {
+      transform: rotate(-1deg) translateY(280px) translateX(-15px);
+    }
+    
+    /* Begin accelerated fall */
+    50% {
+      transform: rotate(0deg) translateY(280px);
+    }
+    
+    70% {
+      transform: translateY(400px);
+    }
+    
+    80% {
+      transform: translateY(480px);
+    }
+    
+    90% {
+      transform: translateY(580px);
+    }
+    
+    /* Final position with exponential acceleration */
+    100% {
+      transform: translateY(1200px);
+    }
+  }
+
+
+/* Weak spot styling */
+.weak-spot {
+    position: absolute;
+    width: 30px;
+    height: 65px;
+    bottom: 0px;
+    right: 508px;
+    cursor: pointer;
+    z-index: 5; /* Bring above footer */
+}
+
+/* Crash screen */
+.crash-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    font-family: monospace;
+    z-index: -1;
+}
+
+li.hobby-item {
+    margin: 5px;
+}
+
+li#hobby-prog::marker { content: "🎵 "; }
+li#hobby-music::marker { content: "💻 "; }
+li#hobby-math-cs::marker { content: "🧠 "; }
+li#hobby-guitar::marker { content: "🎸 "; }
+li#hobby-movie::marker { content: "🎬 "; }
+li#hobby-book::marker { content: "📚 "; }
+li#hobby-lorem::marker { content: "💬 "; }
+
+.academic-table {
+    border-radius: 8px;
+    border: 1px solid #2e2e2e;
+}
+.academic-table thead {
+    background-color: rgb(137, 191, 241);
+    color: var(--alt-font-color);
+    font-size: 110%;
+    text-align: center;
+}
+.academic-table th,td {
+    padding: 1%;
+    width: max-content;
+    border: 1px solid #2e2e2e;
+}
+.academic-table tbody {
+    background-color: rgb(243, 230, 203);
+    text-align: left;
+}
+
+.space {
+    margin-left: 5px;
+}
+
+.contact-table {
+    margin-left: 100px;
+}
+
+.contact-table td,th {
+    border: none;
+}
+
+.contact-category {
+    width: 200px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.contact-value {
+    text-align: left;
+    padding-left: 10px;
+}

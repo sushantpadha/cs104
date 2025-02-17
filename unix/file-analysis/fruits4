@@ -1,0 +1,16 @@
+apple	
+mango	apple
+banana	apple
+pineapple	banana
+kiwi	banana
+watermelon	dragonfruit
+grapes	grapes
+mango	grapes
+banana	kiwi
+apple	kiwi
+pineapple	mango
+dragonfruit	mango
+kiwi	pineapple
+watermelon	pineapple
+grapes	watermelon
+	watermelon

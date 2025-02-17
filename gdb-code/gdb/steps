@@ -1,0 +1,53 @@
+#First go through the broken.cpp file and understand the code at a high level!
+#Compile with debug flag. Run the program first and check what is wrong, it is printing inf!
+#Then run it with debugger to debug!
+
+g++ -g -o broken broken.cpp
+./broken
+gdb broken
+
+# set breakpoints based on line numbers
+break 41
+break 43
+b 6
+
+#check where the breakpoints have been set
+info breakpoints
+
+
+#run till you hit a break point. You have to enter some values of x and n. At first break point, see where you are in code; examine some variables, expressions and also alter their values!
+run
+list
+print n
+print x
+p x+2
+p $2+10
+set variable x = 13
+p x
+
+#continue to next break point which is a breakpoint at a function
+continue
+
+#step into the function and examine arguments and local variables!
+#Also check the code around this break point via list
+step
+info args
+info locals
+list
+list 28
+
+#Let us continue to next breakpoint set at the next function Compute Factorial
+continue
+
+#Let us track the fact variable to figure out what is happening! 
+display fact
+next
+n
+
+#Let us examine the call stack! up takes you from ComputeFactorial to ComputeSeriesValue. Down will take you back from ComputeSeriesValue to ComputeFactorial
+bt
+up
+down
+
+#So, what is the bug? hint display fact should tell something!
+#checkout the unbroken.cpp for the correct code. Do "diff broken.cpp unbroken.cpp"

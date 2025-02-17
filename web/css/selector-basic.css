@@ -1,0 +1,28 @@
+/* Element Selector: Targets all <p> elements */
+p {
+   color: #555;
+   font-size: 16px;
+}
+
+/* Class Selector: Targets elements with the class "highlight" */
+.highlight {
+   background-color: yellow;
+   font-weight: bold;
+}
+
+/* ID Selector: Targets the element with the ID "unique" */
+#unique {
+   color: blue;
+   font-size: 18px;
+   text-decoration: underline;
+}
+
+/* Grouping Selector: Targets only h2 and p */
+h1, p {
+   font-style: italic;
+}
+
+/* Additional Styling for .content */
+.content {
+   background-color: #f0f0f0;
+}

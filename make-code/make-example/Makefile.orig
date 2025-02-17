@@ -1,0 +1,22 @@
+all: udp-test
+
+udp-test: udp-test.o sockutil.o timeutil.o
+	echo "Linking program..."
+	cc -o udp-test udp-test.o sockutil.o timeutil.o -lm
+
+udp-test.o: udp-test.c sockutil.h timeutil.h sync.h
+	echo "Compiling program..."
+	cc -c udp-test.c
+
+sockutil.o: sockutil.c sockutil.h timeutil.h
+	echo "Compiling program..."
+	cc -c sockutil.c
+
+timeutil.o: timeutil.c timeutil.h
+	echo "Compiling program..."
+	cc -c timeutil.c
+
+clean:
+	echo "Cleaning up..."
+	rm -f *.o udp-test
+

@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>Creative Mode</title>
+    <link rel="stylesheet" href="tmp.css" />
+</head>
+
+<body>
+    <div id="main-container">
+        <div id="content">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam esse beatae consectetur repellendus unde
+            minima aut eos aperiam! Est quae aperiam tempora laboriosam magnam quod asperiores ducimus earum porro nobis.
+        </div>
+        <div id="output"></div>
+    </div>
+    <script>
+        const out = document.querySelector("#output");
+
+        function setOut(string) {
+            out.textContent = string;
+        }
+
+        function addOut(string) {
+            out.textContent += string + " ";
+        }
+
+        function nl() {out.textContent += "\r\n";}
+
+        const arr = [3, 5, 7];
+        arr.foo = "hello";
+
+        for (const i in arr) {
+            addOut(i);
+        }
+        nl();
+        // "0" "1" "2" "foo"
+
+        for (const i of arr) {
+            addOut(i);
+        }
+        nl();
+        // Logs: 3 5 7
+
+        addOut(arr.map(n => n**2).join(','));
+        nl();
+
+        addOut(arr.filter(n => n % 5 != 0)); nl();
+
+        addOut(arr.reduce(n => n % 5 != 0)); nl();
+
+    </script>
+</body>
+
+</html>

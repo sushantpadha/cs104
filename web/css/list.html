@@ -1,0 +1,72 @@
+<html>
+<head>
+   <title>List Style Properties</title>
+   <style>
+      
+       /* Different list-style-types */
+       ul.circle {
+           list-style-type: circle;
+       }
+
+       ul.square {
+           list-style-type: square;
+       }
+       ul.upper-roman {
+           list-style-type: upper-roman;
+       }
+
+       ul.lower-alpha {
+           list-style-type: lower-alpha;
+       }
+
+       /* Position properties */
+       ul.inside {
+           list-style-position: inside;
+       }
+
+       ul.outside {
+           list-style-position: outside;
+       }
+   </style>
+</head>
+<body>
+
+<h1>List Style Properties</h1>
+
+<h2>List Style Type</h2>
+<ul class="circle">
+   <li>Circle bullet 1</li>
+   <li>Circle bullet 2</li>
+</ul>
+</ul>
+
+<ul class="square">
+   <li>Square bullet 1</li>
+   <li>Square bullet 2</li>
+</ul>
+
+<ul class="upper-roman">
+   <li>Upper Roman numeral 1</li>
+   <li>Upper Roman numeral 2</li>
+</ul>
+
+<ul class="lower-alpha">
+   <li>Lower Alpha bullet a</li>
+   <li>Lower Alpha bullet b</li>
+</ul>
+
+<h2>List Style Position</h2>
+<p>Outside (default):</p>
+<ul class="outside">
+   <li>Outside position: This is a long text that will wrap to the next line. Notice how the bullet point remains outside the text block, and the text aligns itself after the bullet point.</li>
+   <li>Outside position: Another long text to show how the text aligns when the list-style-position is set to outside. The bullet is outside the block of text, and the text starts on a new line after the bullet.</li>
+</ul>
+
+<p>Inside:</p>
+<ul class="inside">
+   <li>Inside position: This is a long text that will wrap to the next line. Notice how the bullet point is inside the text block, and the text aligns itself right next to the bullet point.</li>
+   <li>Inside position: Another long text to show how the text aligns when the list-style-position is set to inside. The bullet is placed inside the text block, and the text continues right after the bullet.</li>
+</ul>
+
+</body>
+</html>

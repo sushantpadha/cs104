@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sushant Padha - Portfolio</title>
+    <link rel="stylesheet" href="./style_website.css">
+    <script>document.addEventListener("DOMContentLoaded", () => {
+            const weakSpot = document.createElement("div");
+            weakSpot.classList.add("weak-spot");
+
+            document.querySelector(".footer-img").appendChild(weakSpot);
+            const page = document.getElementById("page-container");
+
+            document.querySelector("#reset-btn").addEventListener("click", () => {
+                window.location.reload();
+            })
+
+            weakSpot.addEventListener("click", () => {
+                page.style.animation = "full 4.0s cubic-bezier(0.42, 0, 0.58, 1) forwards";
+                setTimeout(() => {
+                    const crash_screen = document.querySelector(".crash-screen");
+                    crash_screen.style.zIndex = 999;
+                    crash_screen.style.opacity = 1;
+                    crash_screen.style.display = "flex";
+                }, 4000 + 1000);
+
+                // // First phase: Pendulum swing
+                // page.style.animation = "pendulumSwing 1.0s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards";
+
+                // // After pendulum motion, start the break-off fall
+                // setTimeout(() => {
+                //     page.style.animation = "pendulumFall 0.8s cubic-bezier(0.51, 0.04, 0.26, 0.82) forwards";
+                // }, 1000 + 100); // Slightly shorter first phase for better pacing
+
+                // // After pendulum motion, start the break-off fall
+                // setTimeout(() => {
+                //     page.style.animation = "breakFall 2.2s ease-in forwards";
+                // }, 1000 + 100 + 800); // Slightly shorter first phase for better pacing
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="page-container">
+        <header>
+            Sushant Padha - Portfolio
+        </header>
+        <nav>
+            <div id="nav-left">
+                Sushant Padha
+            </div>
+            <div id="nav-right">
+                <a href="./personal_website.html">Home</a>
+                <a href="https://github.com/sushantpadha/" target="_blank">GitHub</a>
+                <a href="./hobbies.html" target="_blank">Hobbies</a>
+                <a href="./achievements.html" target="_blank">Achievements</a>
+                <a href="./contact.html" target="_blank">Contact</a>
+            </div>
+        </nav>
+        <main>
+            <div class="container">
+                <div class="content">
+                    <h2>Welcome to my website!</h2>
+                    <p>
+                        I am Sushant Padha, a freshman in the Computer Science and Engineering (CSE)
+                        Department at the Indian Insitute of Technology, Bombay (IITB) and I will be
+                        graduating in 2028. More about the CSE Department can be found <a
+                            href="https://www.cse.iitb.ac.in/">here</a>.
+                        <br><br>
+                        This website is made as a part of CS104 (Software Systems Lab), a core course in the CSE UG
+                        curriculum in the second semester. <em>Hence, it should only be viewed on a standard display
+                            :)</em>.
+                        <br><br>
+                        I hail from the city of Jammu, and have completed my schooling from there as well.
+                        <br><br>
+                        I am a math, computer science and music enthusiast. I love watching movies and exploring different genres in music and film. I enjoy playing the guitar in my free time.
+                        <br><br>
+                        Most importantly, my favourite xkcd comic is
+                        <span class="image-tooltip">
+                            <a href="https://xkcd.com/936/" class="favourite-xkcd" target="_blank">Password Strength
+                                <span class="tooltip-content" id="xkcd-936">
+                                    <img src="https://imgs.xkcd.com/comics/password_strength.png" alt="xkcd #936"
+                                        class="tooltip-image"
+                                        title="To anyone who understands information theory and security and is in an infuriating argument with someone who does not (possibly involving mixed case), I sincerely apologize.">
+                                </span>
+                            </a>
+                        </span>
+                    </p>
+                    <div id="xkcd-ref">
+                        <p><em>Read the latest xkcd <a href="https://xkcd.com/#">here</a>.</em></p>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img src="me.jpg" alt="Sushant Padha">
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-bar partial-footer">This page was not generated by <a href="https://youtu.be/j5a0jTc9S10">GitHub
+                Pages</a>
+            </div>
+            <div class="footer-img"><img src="footer.png" alt="backend"></div>
+        </footer>
+    </div>
+    <div class="crash-screen">
+
+        <p>My favorite xkcd is obviously 2347
+                <span class="image-tooltip">
+                    <a href="https://xkcd.com/2347/" class="favourite-xkcd" target="_blank">dependency
+                        <span class="tooltip-content" id="xkcd-2347">
+                            <img src="https://imgs.xkcd.com/comics/dependency.png" alt="xkcd #2347"
+                                class="tooltip-image"
+                                title="Someday ImageMagick will finally break for good and we'll have a long period of scrambling as we try to reassemble civilization from the rubble.">
+                        </span>
+                    </a>
+                </span>
+        </p>
+        <button id="reset-btn">Reset</button>
+    </div>
+
+
+</body>
+
+</html>

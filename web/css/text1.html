@@ -1,0 +1,37 @@
+<html>
+<head>
+   <title>Font Styling with Units Example</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           font-size: 16px; /* Base font size */
+           line-height: 1.6; /* Unitless value, scaling with font size */
+       }
+
+       h1 {
+           font-family: 'Georgia', serif;
+           font-size: 2em; /* Font size relative to parent element's font size */
+           font-weight: bold;
+           font-style: oblique; /* Oblique text style */
+           line-height: 120%; /* Percentage of the font size */
+       }
+       p {
+           font-family: 'Verdana', sans-serif;
+           font-size: 0.875em; /* Font size relative to parent element's font size */
+           font-weight: normal;
+           line-height: 1.8em; /* Line height in em units */
+       }
+
+       .highlight {
+           font-weight: bold;
+           font-style: italic;
+       }
+   </style>
+</head>
+<body>
+   <h1>Font Styling with CSS</h1>
+   <p>This is a paragraph demonstrating different font properties in CSS with various units.</p>
+   <p class="highlight">This is a highlighted paragraph with bold and italic styling.</p>
+   <a href="https://www.example.com" target="_blank">Example Website</a>
+</body>
+</html>
