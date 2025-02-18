@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- This tutorial is about iterating on an array of objects, using for loop -->
+    <script src="array_loops.js"></script>
+</head>
+
+<body>
+    <h2>Arrays and For Loops</h2>
+    <h3>Table of Students and Grade</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <th class="name">John</th>
+            <th class="grade">A</th>
+        </tr>
+        <tr>
+            <th class="name">Jane</th>
+            <th class="grade">B</th>
+        </tr>
+        <tr>
+            <th class="name">Joe</th>
+            <th class="grade">C</th>
+        </tr>
+        <tr>
+            <th class="name">Jack</th>
+            <th class="grade">D</th>
+        </tr>
+    </table>
+
+    <p id="demo"></p>
+
+    <script>
+        // Get all elements with the class name "name"
+        let names = document.getElementsByClassName("name");
+
+        // Initialize an empty string to store the student names
+        let students = "";
+
+        // Iterate over the names collection, except for the last element
+        for (let i = 0; i < names.length - 1; i++) {
+            // Append the current name and a comma to the students string
+            students += names[i].innerHTML + ", ";
+        }
+
+        // Append the last name without a trailing comma
+        students += names[names.length - 1].innerHTML;
+
+        // Create a sentence with the list of student names
+        students = "The students are: " + students + ".";
+
+        // Display the sentence in the paragraph with id "demo"
+        document.getElementById("demo").innerHTML = students;
+    </script>
+</body>
+
+</html>

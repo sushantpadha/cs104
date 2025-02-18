@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Demo</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">DOM Manipulation Example</h1>
+    <button id="add">Add Paragraph</button>
+    <button id="remove">Remove Paragraph</button>
+    <button id="change">Change Title</button>
+    <button id="highlight">Highlight Title</button>
+    <button id="hide">Hide Title</button>
+    <button id="show">Show Title</button>
+
+    <div id="container"></div>
+
+    <script>
+        // Add a new paragraph to the container
+        document.getElementById("add").addEventListener("click", function () {
+            let newPara = document.createElement("p");
+            newPara.textContent = "This is a dynamically added paragraph.";
+            newPara.id = "new-para";
+            document.getElementById("container").appendChild(newPara);
+        });
+
+        // Remove the last paragraph from the container
+        document.getElementById("remove").addEventListener("click", function () {
+            let container = document.querySelector("#container") //document.getElementById("container");
+            if (container.lastChild) {
+                container.removeChild(container.lastChild);
+            }
+        });
+
+        // Change the title text
+        document.getElementById("change").addEventListener("click", function () {
+            document.getElementById("title").textContent = "Title Changed!";
+        });
+
+        // Toggle the highlight class on the title
+        document.getElementById("highlight").addEventListener("click", function () {
+            document.getElementById("title").classList.toggle("highlight");
+            // document.getElementsByClassName("highlight").style.display="none";
+        });
+
+        // Hide the title
+        document.getElementById("hide").addEventListener("click", function () {
+            document.getElementById("title").style.display = "none";
+        });
+
+        // Show the title
+        document.getElementById("show").addEventListener("click", function () {
+            document.getElementById("title").style.display = "block";
+        });
+
+    </script>
+</body>
+
+</html>
